@@ -1,0 +1,2 @@
+#!/bin/bash
+BORG_PASSPHRASE=$(cat ~/.borg-passphrase) borg list $(cat ~/.borg-repository)::$1
