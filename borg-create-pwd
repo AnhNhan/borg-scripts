@@ -1,4 +1,4 @@
 #!/bin/bash
 BACKUP_NAME="$1"
 shift
-BORG_PASSPHRASE=$(cat ~/.borg-passphrase) borg create -s --list --compression auto,lzma,5 $(cat ~/.borg-repository)::{hostname}-{user}-{now}-$BACKUP_NAME $@
+BORG_PASSPHRASE=$(cat ~/.borg-passphrase) BORG_REPO=$(cat ~/.borg-repository) borg create -s --list --compression auto,lzma,5 ::{hostname}-{user}-$BACKUP_NAME-{now} $@

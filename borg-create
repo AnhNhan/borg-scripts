@@ -1,4 +1,4 @@
 #!/bin/bash
 cd $(dirname $2)
-BORG_PASSPHRASE=$(cat ~/.borg-passphrase) borg create -s --list --compression auto,lzma,5 $(cat ~/.borg-repository)::{hostname}-{user}-{now}-$1 $2
+BORG_PASSPHRASE=$(cat ~/.borg-passphrase) BORG_REPO=$(cat ~/.borg-repository) borg create -s --list --compression auto,lzma,5 ::{hostname}-{user}-$1-{now} $2
 cd -

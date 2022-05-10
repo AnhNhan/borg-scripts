@@ -1,0 +1,2 @@
+#!/bin/bash
+BORG_PASSPHRASE=$(cat ~/.borg-passphrase) BORG_REPO=$(cat ~/.borg-repository) borg prune --prefix 'fatboy-anhnhan-2021' --list -s  -m 12 -y 4 -w 5 -d 14 -H 48
